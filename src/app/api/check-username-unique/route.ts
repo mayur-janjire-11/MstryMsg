@@ -9,8 +9,6 @@ const UsernameQuerySchema = z.object({
 })
 
 export async function GET(request: Request){
-    //no need in new version of next js
-    
 
     await dbConnect();
 
@@ -45,7 +43,7 @@ export async function GET(request: Request){
         }
         return Response.json({
             success :true ,
-            message : "Username is unique/available"
+            message : "Username is unique"
           }, { status:400})
         
     } catch (error) {
